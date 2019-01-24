@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
 
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 19
+        minSdkVersion 25
+        targetSdkVersion 26
+        multiDexEnabled true  // this line will solve this problem
     }
 
     buildTypes {
@@ -37,3 +38,8 @@ dependencies {
     compile project(':lib')
     compile project(':doi-common')
 }
+
+
+//task buildLib (type: Jar, dependsOn:'compileReleaseJava') {
+//    from (project.buildDir.toString()+'/intermediates/classes/release')
+//}

@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.android.tools.build:gradle:2.3.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -38,7 +38,25 @@ allprojects {
         upload()
     }
 
-    task buildLib (type: Jar, dependsOn:'compileReleaseJava') {
+
+
+    task buildLib (type: Jar, dependsOn:'compileReleaseJavaWithJavac') {
         from (project.buildDir.toString()+'/intermediates/classes/release')
     }
+
+
+
+
+
+//    task buildLib(){
+//    //code
+//    }
+
+//    task buildLib (type: Jar, dependsOn:'compileReleaseJava') {
+//        from (project.buildDir.toString()+'/intermediates/classes/release')
+//    }
+
+
+
+
 }

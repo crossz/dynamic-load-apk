@@ -1,3 +1,8 @@
+一个常规的中国式烂尾项目,2,3年无人维护
+
+项目初衷不错,但是最终没能坚持下来也没能有人接盘,可能还是项目初衷是想绕开 android 的一些政策所为,这本身就会受到很多主力代码贡献者发布大版本的影响.
+
+------------------
 DL : Apk动态加载框架
 ================
 ![DL](https://github.com/singwhatiwanna/dynamic-load-apk/blob/master/imgs/dl.png)

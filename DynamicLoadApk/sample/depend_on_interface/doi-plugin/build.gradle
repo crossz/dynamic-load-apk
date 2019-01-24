@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
 
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 19
+        minSdkVersion 25
+        targetSdkVersion 26
     }
 
     buildTypes {
@@ -35,11 +35,17 @@ android {
 dependencies {
     provided files('../../../lib/build/libs/lib.jar')
     provided files('../doi-common/build/libs/doi-common.jar')
-    provided files('external-jars/android-support-v4.jar')
+//    provided files('external-jars/android-support-v4.jar')
+    provided files('libs/android-support-v4.jar')
 }
 
 task beforeBuild(dependsOn: [':doi-common:buildLib', ':lib:buildLib']) {
 
 }
+
+//task buildLib (type: Jar, dependsOn:'compileReleaseJava') {
+//    from (project.buildDir.toString()+'/intermediates/classes/release')
+//}
+
 
 preBuild.dependsOn beforeBuild
